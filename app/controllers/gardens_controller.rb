@@ -6,6 +6,7 @@ class GardensController < ApplicationController
   end
 
   def new
+    @garden = Garden.new
   end
 
   def create
