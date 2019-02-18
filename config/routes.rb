@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   resources :gardens do
     resources :bookings, only: [ :new, :create, :show, :destroy ]
-  end
-  end
+end
 
   devise_for :users
   root to: 'pages#home'
