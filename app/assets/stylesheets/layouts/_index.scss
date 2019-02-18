@@ -3,3 +3,48 @@
 // @import "dashboard";
 // @import "profile";
 // @import "map";
+
+
+.card {
+  height:200px;
+  background-color: grey;
+  margin-top: 10px;
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  opacity: 0.7;
+  & :hover {
+    opacity:1;
+  }
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 250px 0;
+  padding-left: 150px;
+  height:100vh;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
