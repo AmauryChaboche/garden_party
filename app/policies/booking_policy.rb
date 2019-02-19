@@ -1,6 +1,6 @@
 class BookingPolicy < ApplicationPolicy
   def show?
-    booking.user_id == user.id
+    record.user_id == user.id
   end
 
   def new?
@@ -12,7 +12,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def destroy?
-    booking.user_id == user.id
+    record.user_id == user.id
   end
 
   class Scope < Scope
