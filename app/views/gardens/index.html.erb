@@ -1,0 +1,27 @@
+
+ <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+           url('<%= image_path("toit.png")%>')" >
+  <div class="container" >
+    <h1>  <strong> Find the perfect garden to grow your plants</strong></h1>
+    <p>Try it if you want to live longer ... </p>
+    <a class="btn btn-success" href="#">Find a Garden </a>
+  </div>
+
+
+</div>
+<div class="container">
+
+  <div class="row">
+    <% @gardens.each do |garden| %>
+      <div class="col-xs-12 col-md-6 col-lg-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+           url('<%= image_path("toit.png")%>')">
+          <%= link_to "see", garden_path(garden.id) , class:"cokname" %>
+          </div>
+      </div>
+    <% end %>
+    <div class="col-xs-12 col-md-6 col-lg-4">
+      <%= link_to "Add a new one" , new_garden_path , class:"card" , id:"lastcard"%>
+    </div>
+  </div>
+</div>
