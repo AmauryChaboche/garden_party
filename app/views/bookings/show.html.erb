@@ -1,20 +1,22 @@
 <h1>Bookings#show</h1>
 <p>Find me in app/views/bookings/show.html.erb</p>
 <div class="container">
+    <div class="row" id="booking_id">
+      <div class="col-xs-12 col-md-6 col-lg-4 col-md-offset-3 col-lg-offset-4">
+        <h2>Congrats, you booked: <%= @booking.garden.title %></h2>
+        </br>
+        <ul>
+          <li><h4>at: <%= @booking.price %></h4></li>
 
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-lg-4 col-md-offset-3 col-lg-offset-4">
-      <h2>Congrats, you booked:</h2>
-      <%= @booking.garden.title %>
-      <h4>at: </h4>
-      <%= @booking.price %>
-      <h5>From: </h5>
-      <%= @booking.start_date %>
-      <h5>To: </h5>
-      <%= @booking.end_date %>
-      <h5>at: </h5>
-      <%= @booking.garden.user.email %>
-      <h5><%= @booking.garden.user.email %>'s place!</h5>
+          <li><h5>From: <%= @booking.start_date %></h5></li>
+
+          <li><h5>To: <%= @booking.end_date %></h5></li>
+
+          <li><h5>at: <%= @booking.garden.user.email %></h5></li>
+
+          <li><h5><%= @booking.garden.user.email %>'s place! </h5></li>
+        </ul>
+      </div>
+
     </div>
-  </div>
 </div>
