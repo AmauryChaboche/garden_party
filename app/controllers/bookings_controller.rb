@@ -7,16 +7,16 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.garden = Garden.find(params[:garden_id])
-    @booking.user = User.find(params[:user_id])
+    @booking.user = current_user
     if @booking.save
-      redirect_to garden_booking_path(params[:garden_id], params[:booking_id])
+      redirect_to garden_booking_path(params[:garden_id], @booking)
     else
       render :new
     end
   end
 
   def show
-    @booking = Booking.find(params[:booking_id])
+    @booking = Booking.find(params[:id])
   end
 
   def destroy

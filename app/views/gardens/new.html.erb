@@ -1,19 +1,26 @@
 <h1>Gardens#new</h1>
-<p><%= simple_form_for(@garden) do |f| %>
-  <% if @garden.errors.any? %>
-    <div class="errors-container">
-      <ul>
-        <% @garden.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+<div class="container">
+
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-lg-4 col-md-offset-3 col-lg-offset-4">
+      <p><%= simple_form_for(@garden) do |f| %>
+        <% if @garden.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @garden.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
+        <%= f.input :title, label: 'title' %>
+        <%= f.input :address, label: 'address' %>
+        <%= f.input :description, label: 'description' %>
+        <%= f.input :surface, label: 'surface' %>
+        <%= f.input :price, label: 'price' %>
+        <%= f.input :product, collection: ["tomates", "salades", "haricots", "choux", "radis", "courgettes"] %>
+        <%= f.button :submit %>
+      <% end %></p>
     </div>
-  <% end %>
-  <%= f.input :title, label: 'title' %>
-  <%= f.input :address, label: 'address' %>
-  <%= f.input :description, label: 'description' %>
-  <%= f.input :surface, label: 'surface' %>
-  <%= f.input :price, label: 'price' %>
-  <%= f.input :product, collection: ["tomates", "salades", "haricots", "choux", "radis", "courgettes"] %>
-  <%= f.button :submit %>
-<% end %></p>
+  </div>
+</div>
