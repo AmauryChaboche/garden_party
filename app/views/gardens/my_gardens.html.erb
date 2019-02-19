@@ -1,9 +1,31 @@
-<% if @my_gardens.empty? %>
-  <%= "Sorry, you still don't have any gardens..." %>
-  <% else %>
-  <% @my_gardens.each do |garden| %>
-  <li>
-    <%= garden.title %>
-  </li>
-  <% end %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <% if @my_gardens.empty? %>
+        <%= "Sorry, you still don't have any gardens..." %>
+        <% else %>
+        <% @my_gardens.each do |garden| %>
+          <div class="card-product">
+          <% if garden.photo.present? %>
+              <%= cl_image_tag garden.photo %>
+          <% else %>
+              <%= image_tag 'toit.png' %>
+          <% end %>
+            <div class="card-product-infos">
+              <h2> <%= garden.title %> </h2>
+              <p> <%= garden.description %></p>
+             <p> <strong> <%= garden.price %> €/month</strong></p>
+
+            </div>
+            <div class="boutons">
+             <%= link_to 'Delete Garden', garden_path(garden.id) , method: :delete , class:'btn btn-danger btn-sm' %>
+             <%= link_to 'Update garden', edit_garden_path(garden.id), class:'btn btn-info btn-sm' %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
