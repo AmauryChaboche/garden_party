@@ -16,7 +16,7 @@
       <div class="col-xs-12 col-md-6 col-lg-4">
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
            url('<%= image_path("toit.png")%>')">
-          <%= link_to "see", garden_path(garden.id) , class:"cokname" %>
+          <%= link_to garden.title, garden_path(garden.id), class:"cokname" %>
           </div>
       </div>
     <% end %>
@@ -25,3 +25,5 @@
     </div>
   </div>
 </div>
+
+

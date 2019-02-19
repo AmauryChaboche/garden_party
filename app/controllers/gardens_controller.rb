@@ -1,6 +1,6 @@
 class GardensController < ApplicationController
   def index
-    @gardens = Garden.all
+    @gardens = policy_scope(Garden).order(created_at: :desc)
   end
 
   def show
