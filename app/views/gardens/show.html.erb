@@ -1,9 +1,38 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @garden.photo %>');">
+<% if @garden.photo.present? %>
+  <div class="picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @garden.photo %>');">
+  </div>
+
+<% else %>
+  <div class="picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path("toit.png")%>')">
+  </div>
+<% end %>
+
+<div class="container">
+
+  <div style="display: flex; justify-content: space-around; margin-top: 40px">
+    <div class="info-container">
+      <h2 style="margin-top: 0px"><%= @garden.title.capitalize %></h2>
+      <p><%= @garden.description.capitalize %></p>
+      <% if @garden.product.present? %>
+        <p>Here you can grow <%= @garden.product %></p>
+      <% end %>
+      <p>Rent this garden for <%= @garden.price %>€ per day</p>
+    </div>
+
+    <div>
+      <% if @garden.user.photo.present? %>
+        <div class="avatar" style="background-image: url('<%= cl_image_path @garden.user.photo %>');">
+        </div>
+      <% else %>
+        <div class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path("logo.png")%>');">
+        </div>
+      <% end %>
+    </div>
+
+    <div class="booking-container">
+      <%= link_to 'Add a booking', new_garden_booking_path(@garden.id), class: 'btn btn-info'  %>
+    </div>
+  </div>
+
+
 </div>
-
-<h1>Gardens#show</h1>
-<p>Find me in app/views/gardens/show.html.erb</p>
-
-
-<%= link_to 'Add a booking', new_garden_booking_path(@garden.id), class: 'btn btn-info'  %>
-
