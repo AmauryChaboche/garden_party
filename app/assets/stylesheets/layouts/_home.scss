@@ -66,6 +66,13 @@ a {
   size:1.2em;
 }
 
+#special:hover {
+  color: white;
+}
 
+a:hover, a:focus {
+    color: white;
+    text-decoration: underline
+}
 
 

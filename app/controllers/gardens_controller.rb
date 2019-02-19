@@ -32,6 +32,7 @@ class GardensController < ApplicationController
   end
 
   def edit
+    @garden = Garden.find(params[:id])
   end
 
   def update
