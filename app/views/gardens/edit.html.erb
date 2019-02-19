@@ -11,13 +11,13 @@
             </ul>
           </div>
         <% end %>
-        <%= f.input :title, label: 'title' %>
-        <%= f.input :address, label: 'address' %>
-        <%= f.input :description, label: 'description' %>
-        <%= f.input :surface, label: 'surface' %>
-        <%= f.input :price, label: 'price' %>
-        <%= f.input :product, collection: ["tomates", "salades", "haricots", "choux", "radis", "courgettes"] %>
-        <%= f.input :photo %>
+        <%= f.input :title,default: @garden.title  , label: 'title' %>
+        <%= f.input :address, default: @garden.address , label: 'address' %>
+        <%= f.input :description, default: @garden.description , label: 'description' %>
+        <%= f.input :surface, label: 'surface' , default: @garden.surface %>
+        <%= f.input :price, label: 'price' , default: @garden.price %>
+        <%= f.input :product, default: @garden.product ,  collection: ["tomates", "salades", "haricots", "choux", "radis", "courgettes"] %>
+        <%= f.input :photo , default: @garden.photo %>
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.button :submit %>
       <% end %></p>
