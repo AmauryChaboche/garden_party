@@ -2,10 +2,12 @@ class BookingsController < ApplicationController
   def new
     @garden = Garden.find(params[:garden_id])
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
+    authorize @booking
     @booking.garden = Garden.find(params[:garden_id])
     @booking.user = current_user
     if @booking.save
