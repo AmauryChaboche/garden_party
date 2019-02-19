@@ -1,0 +1,9 @@
+<% if @my_gardens.empty? %>
+  <%= "Sorry, you still don't have any gardens..." %>
+  <% else %>
+  <% @my_gardens.each do |garden| %>
+  <li>
+    <%= garden.title %>
+  </li>
+  <% end %>
+<% end %>

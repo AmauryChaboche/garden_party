@@ -1,0 +1,73 @@
+
+.card {
+  height:200px;
+  background-color: grey;
+  margin-top: 10px;
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  opacity: 0.8;
+}
+
+.card:hover {
+  opacity: 1;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 250px 0;
+  padding-left: 150px;
+  height:100vh;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.mapping {
+  background-color:green;
+  height: 100vh;
+  margin-top:10px;
+  flex: 0 0 450px;
+  height: 100vh;
+  position: sticky !important; /* !important to override Gmaps inline CSS */
+  top: 0 !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.cokname {
+  color:white;
+}
+
+.cokname:hover {
+  color: white;
+  size:1.2em;
+}
+
+
+
+
