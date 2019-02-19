@@ -13,3 +13,5 @@ Garden.create(title: 'Lovely garden', description:'a lovely garden near musée d
 Garden.create(title: 'Huge garden', description:'a huge garden in versailles', price: 100, surface: 100, user_id: 1)
 Garden.create(title: 'Simple garden', description:'a simple garden in Pigalles : ideal place to grow potatoes', price: 50, surface: 5, user_id: 1)
 Garden.create(title: 'Poor garden', description:'a poor garden: ideal place to grow salads', price: 40, surface: 4, user_id: 1)
+
+
