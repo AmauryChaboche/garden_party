@@ -14,12 +14,23 @@
   <div class="row">
     <% @gardens.each do |garden| %>
       <div class="col-xs-12 col-md-6 col-lg-4">
+        <% if garden.photo.present? %>
+
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+           url('<%= cl_image_path garden.photo %>')" >
+          <%= link_to garden.title, garden_path(garden.id), class:"cokname" %>
+          </div>
+        <% else %>
+
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
            url('<%= image_path("toit.png")%>')">
-          <%= link_to "see", garden_path(garden.id) , class:"cokname" %>
+            <%= link_to garden.title, garden_path(garden.id) , class:"cokname" %>
           </div>
+        <% end %>
+
       </div>
     <% end %>
+
     <div class="col-xs-12 col-md-6 col-lg-4">
       <%= link_to "Add a new one" , new_garden_path , class:"card" , id:"lastcard"%>
     </div>

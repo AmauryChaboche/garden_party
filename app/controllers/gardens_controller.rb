@@ -1,6 +1,6 @@
 class GardensController < ApplicationController
   def index
-    @gardens = Garden.all
+    @gardens = policy_scope(Garden).order(created_at: :desc)
   end
 
   def show
@@ -32,7 +32,6 @@ class GardensController < ApplicationController
     private
 
   def garden_params
-    params.require(:garden).permit(:title, :address, :description, :surface, :price, :product)
+    params.require(:garden).permit(:title, :address, :description, :surface, :price, :product, :photo)
   end
-
 end
