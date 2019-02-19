@@ -10,7 +10,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "My Bookings", my_bookings_bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My Bookings", my_bookings_garden_bookings_path(:garden_id), class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "My Gardens", my_gardens_gardens_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
