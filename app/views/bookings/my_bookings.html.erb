@@ -1,9 +1,31 @@
-<% if @my_bookings.empty? %>
-  <%= "Sorry, you still don't have any bookings..." %>
-  <% else %>
-  <% @my_bookings.each do |booking| %>
-  <li>
-    <%= booking.garden.title  %>
-  </li>
-  <% end %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <% if @my_bookings.empty? %>
+          <%= "Sorry, you still don't have any bookings..." %>
+        <% else %>
+            <% @my_bookings.each do |booking| %>
+            <div class="card-product">
+
+              <%= image_tag 'toit.png' %>
+              <div class="card-product-infos">
+                  <%= booking.garden.title  %>
+                <h2> <%= booking.garden.title %> </h2>
+                <p> <%= booking.garden.description %></p>
+                <p> <strong> <%=booking.price %> € </strong></p>
+              </div>
+
+              <div class="boutons">
+               <%= link_to 'See my booking', garden_booking_path(booking.garden.id, booking.id), class:'btn btn-info btn-sm' %>
+              </div>
+
+            </div>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
