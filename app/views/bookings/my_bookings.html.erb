@@ -1,0 +1,9 @@
+<% if @my_bookings.empty? %>
+  <%= "Sorry, you still don't have any bookings..." %>
+  <% else %>
+  <% @my_bookings.each do |booking| %>
+  <li>
+    <%= booking.garden.title  %>
+  </li>
+  <% end %>
+<% end %>

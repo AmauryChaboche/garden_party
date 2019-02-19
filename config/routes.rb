@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
   resources :gardens do
-    resources :bookings, only: [ :new, :create, :show, :destroy ]
-end
+    collection do
+      get 'my_gardens'
+    end
+  end
+    resources :bookings, only: [ :new, :create, :show, :destroy ] do
+      collection do
+        get 'my_bookings'
+      end
+    end
+
 
   devise_for :users
   root to: 'gardens#index'
