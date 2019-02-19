@@ -32,9 +32,13 @@ class GardensController < ApplicationController
   end
 
   def edit
+    @garden = Garden.find(params[:id])
   end
 
   def update
+    @garden = Garden.find(params[:id])
+    @garden.update(garden_params)
+    redirect_to garden_path(@garden)
   end
 
     private
