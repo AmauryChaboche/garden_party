@@ -1,6 +1,6 @@
 class GardensController < ApplicationController
   def index
-    @gardens = Garden.all
+    @gardens = policy_scope(Garden).order(created_at: :desc)
   end
 
   def show
@@ -8,15 +8,18 @@ class GardensController < ApplicationController
 
   def new
     @garden = Garden.new
+    authorize @garden
   end
 
   def create
-   @garden = Garden.new(garden_params)
-    if @garden.save
-   redirect_to garden_path(@garden.id)
-    else
-      render :new
-    end
+    @garden = Garden.new(garden_params)
+    @garden.user = current_user
+    authorize @garden
+      if @garden.save
+     redirect_to garden_path(@garden.id)
+      else
+        render :new
+      end
   end
 
   def destroy
@@ -31,7 +34,6 @@ class GardensController < ApplicationController
     private
 
   def garden_params
-    params.require(:garden).permit(:title, :address, :description, :surface, :price, :product)
+    params.require(:garden).permit(:title, :address, :description, :surface, :price, :product, :photo)
   end
-
 end
