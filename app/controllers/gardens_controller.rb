@@ -12,6 +12,7 @@ class GardensController < ApplicationController
 
   def create
    @garden = Garden.new(garden_params)
+   @garden.user = current_user
     if @garden.save
    redirect_to garden_path(@garden.id)
     else
