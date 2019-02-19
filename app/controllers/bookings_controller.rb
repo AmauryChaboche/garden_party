@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    sleep 1.5
     @booking = Booking.new(booking_params)
     authorize @booking
     @booking.garden = Garden.find(params[:garden_id])
