@@ -8,16 +8,18 @@ class GardensController < ApplicationController
 
   def new
     @garden = Garden.new
+    authorize @garden
   end
 
   def create
-   @garden = Garden.new(garden_params)
-   @garden.user = current_user
-    if @garden.save
-   redirect_to garden_path(@garden.id)
-    else
-      render :new
-    end
+    @garden = Garden.new(garden_params)
+    @garden.user = current_user
+    authorize @garden
+      if @garden.save
+     redirect_to garden_path(@garden.id)
+      else
+        render :new
+      end
   end
 
   def destroy
