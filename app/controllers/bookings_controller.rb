@@ -5,6 +5,10 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
+  def my_bookings
+    @my_bookings = Booking.where(user_id: current_user)
+  end
+
   def create
     @booking = Booking.new(booking_params)
     authorize @booking
