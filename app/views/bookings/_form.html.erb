@@ -1,8 +1,20 @@
-<h1 style='margin-top: 0px'>Book your garden</h1>
+<h2 style='margin-top: 0px'>Book your garden</h2>
 <%= simple_form_for [garden, booking] do |f| %>
-  <%= f.date_select :start_date, as: :date %>
+  <p>When do you want to rent this garden?</p>
+
+  <%= f.date_select :start_date, as: :date, id: 'booking-start-date' %>
   <br>
-  <%= f.date_select :end_date, as: :date %>
   <br>
-  <%= f.submit "Book", class: "btn btn-primary", id: "button_sweet_alert" %>
+  <p>Until what date?</p>
+  <%= f.date_select :end_date, as: :date, id: 'booking-end-date' %>
+  <br>
+  <span style='padding-top: 10px; font-weight: bold; font-size: 17Px;'>
+    <span id="number-days"></span>
+    <span>€ total price</span>
+    <span id="garden-price" style='display: none;'><%= garden.price %></span>
+  </span>
+
+  <div class="button text-center">
+  <%= f.submit "Book", class: "btn btn-success book-button", id: "button_sweet_alert" %>
+  </div>
 <% end %>

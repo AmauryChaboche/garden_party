@@ -7,6 +7,10 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
 
+import { countDays } from '../components/countDays'
+
+countDays();
+
 const button = document.getElementById("button_sweet_alert")
 if (button) {
     button.addEventListener("click",(event) => {
