@@ -28,6 +28,17 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
+
+    @map_gardens = []
+    @map_gardens << @booking
+
+    @markers = @map_gardens.map do |garden|
+      {
+        lng: @booking.garden.longitude,
+        lat: @booking.garden.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { garden: garden })
+      }
+    end
   end
 
   def destroy
