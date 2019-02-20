@@ -59,14 +59,16 @@ d = User.create(
 
 # GARDENS
 
-gard1 = Garden.create(
+
+gard1 = Garden.new(
   title: 'Lovely garden',
   description:'a lovely garden near musée de montmartre : ideal place to grow tomatoes',
   price: 150,
   surface: 10,
-  user: a,
+  user_id: 8,
   address: '10, avenue Gambetta PARIS',
   product: 'tomatoes',
+  photo: 'https://images.unsplash.com/photo-1515347272087-685ce5a1fc8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2466&q=80'
 )
 
 gard2 = Garden.create(

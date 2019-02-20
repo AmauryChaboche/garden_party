@@ -1,12 +1,40 @@
-#booking_id {
-  display: flex;
-  background-color: #DDDDDD;
-  justify-content: space-around;
-  border-radius: 5px;
-
+#booking_card {
+   display: flex;
+   border-radius: 5px;
+   background-color: #DDDDDD;
+   margin: 3px;
+   justify-content: space-around;
 }
 
-#booking_id li {
+#booking_result {
+  width: 30%;
+  border-radius: 5px;
+  background-color: #BABABA;
+  padding: 3px;
+}
+
+#booking_header {
+  background-color: lightgrey ;
+  text-align: center;
+  margin: 3px;
+  padding: 3px;
+  //
+}
+
+#booking_body {
   list-style-type:none;
   background-color: #FEFEFE;
+  margin: 3px;
+  padding: 3px;
 }
+
+#booking_garden_image {
+  background-size: cover;
+  background-position: center;
+  width: 30%;
+}
+
+#booking_garden_map {
+  width: 30%;
+}
+
