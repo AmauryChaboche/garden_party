@@ -33,11 +33,11 @@
     <div class="booking-container">
       <% if @garden.user == current_user %>
         <div class="booking-container">
-          <%= link_to 'Edit', edit_garden_path(@garden.id), class: 'btn btn-info'  %>
+          <%= link_to 'Edit my Garden', edit_garden_path(@garden.id), class: 'btn btn-info'  %>
         </div>
 
         <div class="booking-container">
-          <%= link_to 'Delete', garden_path(@garden), method: :delete, data:{ confirm: "Are you sure you want to delete this garden?"}, class: 'btn btn-info'  %>
+          <%= link_to 'Delete my Garden', garden_path(@garden), method: :delete, data:{ confirm: "Are you sure you want to delete this garden?"}, class: 'btn btn-info'  %>
         </div>
       <% else %>
     <%= render 'bookings/form', booking: @booking, garden: @garden %>
