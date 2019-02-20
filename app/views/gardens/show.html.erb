@@ -14,9 +14,9 @@
       <h2 style="margin-top: 0px"><%= @garden.title.capitalize %></h2>
       <p><%= @garden.description.capitalize %></p>
       <% if @garden.product.present? %>
-        <p>Here you can grow <%= @garden.product %></p>
+      <p><i class="fas fa-apple-alt"></i> Here you can grow <%= @garden.product %></p>
       <% end %>
-      <p>Rent this garden for <%= @garden.price %>€ per day</p>
+      <p><i class="fas fa-dollar-sign"></i> Rent this garden for <%= @garden.price %>€ per day</p>
     </div>
 
     <div class="avatar-box">
@@ -30,20 +30,17 @@
       <p><%= @garden.user.first_name %></p>
     </div>
 
-    <div class="booking-container">
       <% if @garden.user == current_user %>
-        <div class="booking-container">
-          <%= link_to 'Edit my Garden', edit_garden_path(@garden.id), class: 'btn btn-info'  %>
-        </div>
-
-        <div class="booking-container">
-          <%= link_to 'Delete my Garden', garden_path(@garden), method: :delete, data:{ confirm: "Are you sure you want to delete this garden?"}, class: 'btn btn-info'  %>
+        <div class="edit-container">
+          <%= link_to 'Edit my Garden', edit_garden_path(@garden.id), class: 'btn btn-warning text-center'  %>
+          <%= link_to 'Delete my Garden', garden_path(@garden), method: :delete, data:{ confirm: "Are you sure you want to delete this garden?"}, class: 'btn btn-danger text-center'  %>
         </div>
       <% else %>
+    <div class="booking-container">
     <%= render 'bookings/form', booking: @booking, garden: @garden %>
+    </div>
       <% end %>
 
-    </div>
   </div>
 
 
