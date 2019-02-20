@@ -19,7 +19,7 @@
       <p>Rent this garden for <%= @garden.price %>€ per day</p>
     </div>
 
-    <div class="">
+    <div class="avatar-box">
       <% if @garden.user.photo.present? %>
         <div class="avatar" style="background-image: url('<%= cl_image_path @garden.user.photo %>');">
         </div>
@@ -31,7 +31,7 @@
     </div>
 
     <div class="booking-container">
-      <%= link_to 'Add a booking', new_garden_booking_path(@garden.id), class: 'btn btn-info'  %>
+      <%= render 'bookings/form', booking: @booking, garden: @garden %>
     </div>
   </div>
 
