@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
 
   def my_bookings
     @my_bookings = Booking.where(user_id: current_user)
+    # @garden = Garden.find(params[:garden_id])
   end
 
   def create
