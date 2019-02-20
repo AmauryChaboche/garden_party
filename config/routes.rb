@@ -1,17 +1,15 @@
 Rails.application.routes.draw do
-  resources :gardens do
-    collection do
-      get 'my_gardens'
-  end
-    resources :bookings, only: [ :new, :create, :show, :destroy ] do
-      collection do
-        get 'my_bookings'
-      end
-    end
-end
-
 
   devise_for :users
   root to: 'gardens#index'
+
+  resources :gardens do
+    resources :bookings, only: [ :create ]
+    collection do
+      get 'my_gardens'
+    end
+  end
+  resources :bookings, only: [ :index, :show, :destroy ]
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,12 +1,15 @@
 class BookingsController < ApplicationController
+
+
   def new
     @garden = Garden.find(params[:garden_id])
     @booking = Booking.new
     authorize @booking
   end
 
-  def my_bookings
-    @my_bookings = Booking.where(user_id: current_user)
+  def index
+    @my_bookings = policy_scope(Booking.where(user_id: current_user))
+    authorize @my_bookings
   end
 
   def create
@@ -16,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.garden = Garden.find(params[:garden_id])
     @booking.user = current_user
     if @booking.save
-      redirect_to garden_booking_path(params[:garden_id], @booking)
+      redirect_to booking_path(@booking)
     else
       render :new
     end

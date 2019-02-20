@@ -1,0 +1,8 @@
+<h1 style='margin-top: 0px'>Book your garden</h1>
+<%= simple_form_for [garden, booking] do |f| %>
+  <%= f.date_select :start_date, as: :date %>
+  <br>
+  <%= f.date_select :end_date, as: :date %>
+  <br>
+  <%= f.submit "Book", class: "btn btn-primary", id: "button_sweet_alert" %>
+<% end %>
