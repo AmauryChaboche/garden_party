@@ -2,6 +2,11 @@ import "bootstrap";
 
 import Swal from 'sweetalert2'
 
+import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
+import { initMapbox } from '../plugins/init_mapbox';
+
+initMapbox();
+
 const button = document.getElementById("button_sweet_alert")
 if (button) {
     button.addEventListener("click",(event) => {

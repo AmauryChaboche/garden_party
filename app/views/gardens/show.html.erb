@@ -19,14 +19,15 @@
       <p>Rent this garden for <%= @garden.price %>€ per day</p>
     </div>
 
-    <div>
+    <div class="">
       <% if @garden.user.photo.present? %>
         <div class="avatar" style="background-image: url('<%= cl_image_path @garden.user.photo %>');">
         </div>
       <% else %>
-        <div class="avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path("logo.png")%>');">
+        <div class="avatar" style="background-image: url('<%= image_path("avatar.png")%>');">
         </div>
       <% end %>
+      <p><%= @garden.user.first_name %></p>
     </div>
 
     <div class="booking-container">
