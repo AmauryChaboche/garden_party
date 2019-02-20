@@ -7,13 +7,15 @@
         <% else %>
             <% @my_bookings.each do |booking| %>
             <div class="card-product">
-
+              <% if booking.garden.photo.present? %>
+              <%= cl_image_tag booking.garden.photo %>
+              <% else %>
               <%= image_tag 'toit.png' %>
+              <% end %>
               <div class="card-product-infos">
                   <%= booking.garden.title  %>
-                <h2> <%= booking.garden.title %> </h2>
                 <p> <%= booking.garden.description %></p>
-                <p> <strong> <%=booking.price %> € </strong></p>
+                <p> <strong> <%=booking.garden.price %> € </strong></p>
               </div>
 
               <div class="boutons">
