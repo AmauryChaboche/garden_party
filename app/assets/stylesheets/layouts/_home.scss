@@ -44,14 +44,7 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.mapping {
-  background-color:green;
-  margin-top:10px;
-  flex: 0 0 450px;
-  height: 100vh;
-  position: sticky !important; /* !important to override Gmaps inline CSS */
-  top: 0 !important;
-}
+
 
 a {
   text-decoration: none;
