@@ -1,6 +1,16 @@
 class GardensController < ApplicationController
   def index
     @gardens = policy_scope(Garden).order(created_at: :desc)
+
+    @map_gardens = Garden.where.not(latitude: nil, longitude: nil)
+
+    @markers = @map_gardens.map do |garden|
+      {
+        lng: garden.longitude,
+        lat: garden.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { garden: garden })
+      }
+    end
   end
 
   def my_gardens
@@ -31,7 +41,8 @@ class GardensController < ApplicationController
 
   def destroy
     @garden = Garden.find(params[:id])
-    @garden.destroy
+    authorize @garden
+    @garden.delete
     redirect_to gardens_path
   end
 
@@ -44,6 +55,7 @@ class GardensController < ApplicationController
     @garden.update(garden_params)
     redirect_to garden_path(@garden)
   end
+
 
     private
 
