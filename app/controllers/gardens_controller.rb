@@ -40,7 +40,8 @@ class GardensController < ApplicationController
 
   def destroy
     @garden = Garden.find(params[:id])
-    @garden.destroy
+    authorize @garden
+    @garden.delete
     redirect_to gardens_path
   end
 
