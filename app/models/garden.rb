@@ -11,4 +11,3 @@ class Garden < ApplicationRecord
   # validates :price
   # validates :product, inclusion: {in:["tomates", "salades", "haricots", "choux", "radis", "courgettes"]}
 end
-
