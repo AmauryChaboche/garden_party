@@ -1,32 +1,29 @@
 <h1>Bookings#show</h1>
 <p>Find me in app/views/bookings/show.html.erb</p>
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-lg-4 col-md-offset-3 col-lg-offset-4">
-      <div class="card">
+  <div class="row" id="booking_card">
+      <div class="card" id="booking_garden_image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @booking.garden.photo %>');">
+<!--         <%= cl_image_tag @booking.garden.photo %>
+ -->      </div>
 
-          <div class="card-header">
-            <h2>Congrats, you booked: <%= @booking.garden.title %></h2>
+      <div class="card" id="booking_result">
+          <div class="card-header" id="booking_header">
+            <%= @booking.garden.user.email %>'s place!
           </div>
-
-
-          <div class="card-body" id="booking_id">
-
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><h4>at: <%= @booking.price %></h4></li>
-
-              <li class="list-group-item"><h5>From: <%= @booking.start_date %></h5></li>
-
-              <li class="list-group-item"><h5>To: <%= @booking.end_date %></h5></li>
-
-              <li class="list-group-item"><h5>at: <%= @booking.garden.user.email %></h5></li>
-
-              <li class="list-group-item"><h5><%= @booking.garden.user.email %>'s place! </h5></li>
-            </ul>
+          <div class="card-body" id="booking_body">
+            <h5 class="card-title"><%= @booking.garden.title %></h5>
+            <p class="card-text">From: <%= @booking.start_date %></p>
+            <p class="card-text">To: <%= @booking.end_date %></p>
+            <p class="card-text">at: <%= @booking.price %> €</p>
+            <p class="card-text">at: <%= @booking.garden.user.email %></p>
           </div>
+      </div>
+
+      <div class="card" id="booking_garden_map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="pk.eyJ1IjoiYW1hdXJ5Y2hhYm9jaGUiLCJhIjoiY2pydWdkdWM1MDRoeTQ0cDlpZmJibjI4YiJ9.r5kkC2C8yVGlRtA0GO4JBw">
 
       </div>
-    </div>
 
   </div>
 </div>
