@@ -30,7 +30,17 @@
     </div>
 
     <div class="booking-container">
-      <%= link_to 'Add a booking', new_garden_booking_path(@garden.id), class: 'btn btn-info'  %>
+      <% if @garden.user == current_user %>
+        <div class="booking-container">
+          <%= link_to 'Edit', edit_garden_path(@garden.id), class: 'btn btn-info'  %>
+        </div>
+
+        <div class="booking-container">
+          <%= link_to 'Delete', garden_path(@garden), method: :delete, data:{ confirm: "Are you sure you want to delete this garden?"}, class: 'btn btn-info'  %>
+        </div>
+      <% else %>
+        <%= link_to 'Add a booking', new_garden_booking_path(@garden.id), class: 'btn btn-info'  %>
+      <% end %>
     </div>
   </div>
 

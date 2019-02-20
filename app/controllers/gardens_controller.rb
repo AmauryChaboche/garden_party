@@ -29,6 +29,10 @@ class GardensController < ApplicationController
   end
 
   def destroy
+    @garden = Garden.find(params[:id])
+    authorize @garden
+    @garden.delete
+    redirect_to gardens_path
   end
 
   def edit
