@@ -1,16 +1,20 @@
 class GardensController < ApplicationController
   def index
-    @gardens = policy_scope(Garden).order(created_at: :desc)
-
-    @map_gardens = Garden.where.not(latitude: nil, longitude: nil)
-
-    @markers = @map_gardens.map do |garden|
-      {
-        lng: garden.longitude,
-        lat: garden.latitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { garden: garden })
-      }
+    if params[:product].present?
+      @gardens = policy_scope(Garden).where(product: params[:product])
+    else
+      @gardens = policy_scope(Garden).order(created_at: :desc)
     end
+
+    @map_gardens = @gardens.where.not(latitude: nil, longitude: nil)
+      @markers = @map_gardens.map do |garden|
+        {
+          lng: garden.longitude,
+          lat: garden.latitude,
+          infoWindow: render_to_string(partial: "infowindow", locals: { garden: garden })
+        }
+
+  end
   end
 
   def my_gardens
