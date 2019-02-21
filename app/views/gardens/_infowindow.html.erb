@@ -1,12 +1,6 @@
 
 <%= link_to garden_path(garden) do %>
   <p> </p>
-  <p class='special'> <%=  garden.title  %> </p>
-  <p class='special'> <strong>  <%= garden.price %> </strong> €/month </p>
-  <%  if garden.photo.present?   %>
-    <%= cl_image_tag garden.photo , class:'kiff' %>
-  <% else %>
-    <div class='kiff'> <%= image_tag('toit.png') %> </div>
-  <% end %>
+  <p class='special'> <strong>  <%= garden.price %> </strong> €/day </p>
 <% end  %>
 

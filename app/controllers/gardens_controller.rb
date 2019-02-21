@@ -8,7 +8,8 @@ class GardensController < ApplicationController
       {
         lng: garden.longitude,
         lat: garden.latitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { garden: garden })
+        infoWindow: render_to_string(partial: "infowindow", locals: { garden: garden }),
+        image_url: helpers.asset_url('rog.png')
       }
     end
   end
@@ -33,7 +34,7 @@ class GardensController < ApplicationController
     @garden.user = current_user
     authorize @garden
       if @garden.save
-     redirect_to garden_path(@garden.id)
+        redirect_to garden_path(@garden.id)
       else
         render :new
       end
