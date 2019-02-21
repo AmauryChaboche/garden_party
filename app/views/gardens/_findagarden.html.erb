@@ -1,0 +1,22 @@
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 container form-container">
+      <div class="row search-garden-row">
+        <%= form_tag gardens_path, method: :get do %>
+          <%= label_tag 'Where' %>
+          <%= text_field_tag :city,
+          params[:city],
+          class: "form-control",
+          placeholder: "Enter a city"
+          %>
+    </div>
+          <br>
+    <div class="row search-garden-row">
+          <%= label_tag 'What' %>
+          <%= select_tag :product, options_for_select(["tomatoes", "salads", "carrots", "beans"]),
+          prompt: "Select a product",
+          class: "form-control"
+          %>
+          <br>
+          <%= submit_tag "Search", class: "btn btn-large btn-success" %>
+        <% end %>
+      </div>
+</div>
