@@ -66,7 +66,7 @@ gard1 = Garden.new(
   description:'a lovely garden near musée de montmartre : ideal place to grow tomatoes',
   price: 150,
   surface: 10,
-  user_id: 1,
+  user: a,
   address: '10, avenue Gambetta PARIS',
   product: 'tomatoes'
 )
