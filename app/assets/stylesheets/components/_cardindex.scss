@@ -4,8 +4,26 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height:260px;
-
+  opacity: 1;
+  transition: 0.6s ease;
 }
+
+
+// .card {
+//   margin:20px;
+//   box-shadow: 3px 3px 3px lightgrey;
+//   opacity: 1;
+//   transition: 0.6s ease;
+// }
+
+.card-trip:hover {
+  margin-top:26px;
+  margin-bottom:4px;
+  opacity: 0.9;
+  box-shadow: 3px 3px 3px lightgrey;
+  transition: 0.6s ease;
+}
+
 
 .card-trip-image{
   height: 200px;
