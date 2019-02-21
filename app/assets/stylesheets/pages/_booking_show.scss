@@ -4,6 +4,7 @@
    background-color: #DDDDDD;
    margin: 3px;
    justify-content: space-around;
+   align-items: center;
 }
 
 #booking_result {
@@ -32,9 +33,14 @@
   background-size: cover;
   background-position: center;
   width: 30%;
+  height: 50vh;
+  border: 3px solid lightgrey;
 }
 
-#booking_garden_map {
+
+#booking_map {
   width: 30%;
+  border: 3px solid lightgrey;
+  // height: 200px;
 }
 
