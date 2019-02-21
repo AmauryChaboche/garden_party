@@ -1,4 +1,12 @@
 class Garden < ApplicationRecord
+  include PgSearch
+
+  pg_search_scope :search_by_city_and_product,
+  against: [ :city, :product ],
+  using: {
+    tsearch: { prefix: true }
+  }
+
   has_many :bookings
   belongs_to :user
   validates :title, presence: true
