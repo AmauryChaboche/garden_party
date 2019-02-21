@@ -18,7 +18,13 @@
 
             </div>
             <div class="boutons">
-             <%= link_to 'Delete Garden', garden_path(garden.id) , method: :delete , class:'btn btn-danger btn-sm' %>
+              <% if garden.bookings.first != nil %>
+                <div class="flash flash-success">
+                  <span><strong>Yay!</strong> 🎉 BOOKED </span>
+                </div>
+                <% else %>
+                <%= link_to 'Delete Garden', garden_path(garden.id) , method: :delete , class:'btn btn-danger btn-sm' %>
+                <% end %>
              <%= link_to 'Update garden', edit_garden_path(garden.id), class:'btn btn-info btn-sm' %>
             </div>
           </div>

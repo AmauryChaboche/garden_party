@@ -43,10 +43,12 @@
 /* Navbar link */
 .navbar-wagon-link {
   color: #616668;
+  transition: font-size 0.6s ease;
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: #228B22;
+  font-size: 20px;
   text-decoration: none;
 }
 
