@@ -13,15 +13,16 @@
           <% end %>
             <div class="card-product-infos">
               <h2> <%= garden.title %> </h2>
-              <% if garden.bookings.first != nil %>
-                <h5>booké</h5>
-              <% end %>
               <p> <%= garden.description %></p>
              <p> <strong> <%= garden.price %> €/month</strong></p>
 
             </div>
             <div class="boutons">
-             <%= link_to 'Delete Garden', garden_path(garden.id) , method: :delete , class:'btn btn-danger btn-sm' %>
+              <% if garden.bookings.first != nil %>
+                <h5>booked</h5>
+                <% else %>
+                <%= link_to 'Delete Garden', garden_path(garden.id) , method: :delete , class:'btn btn-danger btn-sm' %>
+                <% end %>
              <%= link_to 'Update garden', edit_garden_path(garden.id), class:'btn btn-info btn-sm' %>
             </div>
           </div>
