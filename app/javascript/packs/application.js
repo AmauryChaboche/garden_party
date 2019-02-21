@@ -14,7 +14,7 @@ countDays();
 const button = document.getElementById("button_sweet_alert")
 if (button) {
     button.addEventListener("click",(event) => {
-        Swal.fire({
+      Swal.fire({
       position: 'center',
       type: 'success',
       title: 'Your garden has been booked',
@@ -24,4 +24,29 @@ if (button) {
   })
 }
 
-
+//   swalWithBootstrapButtons.fire({
+//     title: 'Are you sure?',
+//     text: "You won't be able to revert this!",
+//     type: 'warning',
+//     showCancelButton: true,
+//     confirmButtonText: 'Yes, book it!',
+//     cancelButtonText: 'No, cancel!',
+//     reverseButtons: true
+//   }).then((result) => {
+//     if (result.value) {
+//       swalWithBootstrapButtons.fire(
+//         'Booked!',
+//         'Your garden is booked.',
+//         'success'
+//       )
+//     } else if (
+//       // Read more about handling dismissals
+//       result.dismiss === Swal.DismissReason.cancel
+//     ) {
+//       swalWithBootstrapButtons.fire(
+//         'Cancelled',
+//         'This garden wil not be yours :)',
+//         'Bye'
+//       )
+//     }
+//   })
