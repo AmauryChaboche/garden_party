@@ -14,7 +14,14 @@
               <p class="card-text">From: <%= @booking.start_date %></p>
               <p class="card-text">To: <%= @booking.end_date %></p>
             </div>
-            <p class="card-text"><%= @booking.price %> €</p>
+            <p class="card-text">
+              <% if @booking.start_date.nil? || @booking.end_date.nil? %>
+               <%= %>
+              <% else %>
+                <% total_days = (@booking.end_date - @booking.start_date) * @booking.garden.price %>
+               <p> Total price : <strong> <%= total_days.to_i %> </strong>€</p>
+               <% end %>
+            </p>
             <a href="mailto:<%= @booking.garden.user.email %>?subject=Mail from GardenParty.com concern <%= @booking.garden.title %> booking&body=<%= "#{@booking.garden.title} , #{@booking.garden.address}, is booking from:  #{@booking.start_date} to: #{@booking.end_date}. You should receive #{@booking.price} € for this garden. Regards".html_safe %>">Email <%= @booking.garden.user.first_name %></a>
 
           </div>

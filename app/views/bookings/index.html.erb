@@ -17,9 +17,9 @@
                 <p> <%= booking.garden.description %>
                 <% if booking.start_date.nil? || booking.end_date.nil? %>
                  <%= %>
-                <% else  %>
+                <% else %>
                   <% total_days = (booking.end_date - booking.start_date) * booking.garden.price %>
-                 <p> Total price : <strong> <%= total_days.to_i %> </strong> € </p>
+                 <p> Total price : <strong> <%= total_days.to_i %> </strong>€</p>
                  <% end %>
               </div>
               <div class="boutons">
