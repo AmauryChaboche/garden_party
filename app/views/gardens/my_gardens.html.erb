@@ -19,7 +19,9 @@
             </div>
             <div class="boutons">
               <% if garden.bookings.first != nil %>
-                <h5>booked</h5>
+                <div class="flash flash-success">
+                  <span><strong>Yay!</strong> 🎉 BOOKED </span>
+                </div>
                 <% else %>
                 <%= link_to 'Delete Garden', garden_path(garden.id) , method: :delete , class:'btn btn-danger btn-sm' %>
                 <% end %>
