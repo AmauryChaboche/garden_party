@@ -13,6 +13,9 @@
           <% end %>
             <div class="card-product-infos">
               <h2> <%= garden.title %> </h2>
+              <% if garden.bookings.first != nil %>
+                <h5>booké</h5>
+              <% end %>
               <p> <%= garden.description %></p>
              <p> <strong> <%= garden.price %> €/month</strong></p>
 
