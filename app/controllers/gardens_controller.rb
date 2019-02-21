@@ -8,13 +8,13 @@ class GardensController < ApplicationController
 
     @map_gardens = @gardens.where.not(latitude: nil, longitude: nil)
       @markers = @map_gardens.map do |garden|
-        {
-          lng: garden.longitude,
-          lat: garden.latitude,
-          infoWindow: render_to_string(partial: "infowindow", locals: { garden: garden })
-        }
-
-  end
+      {
+        lng: garden.longitude,
+        lat: garden.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { garden: garden }),
+        image_url: helpers.asset_url('rog.png')
+      }
+    end
   end
 
   def my_gardens
@@ -37,7 +37,7 @@ class GardensController < ApplicationController
     @garden.user = current_user
     authorize @garden
       if @garden.save
-     redirect_to garden_path(@garden.id)
+        redirect_to garden_path(@garden.id)
       else
         render :new
       end
