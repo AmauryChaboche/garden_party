@@ -14,8 +14,8 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div style="position: relative; padding-bottom: 100px;">
-      <div style="margin-bottom: 30px; height:100vh;">
+    <div style="position: relative; padding-bottom: 100px; min-height: 100vh;">
+      <div style="margin-bottom: 30px;">
         <%= yield %>
       </div>
       <%= render 'shared/footer' %>
