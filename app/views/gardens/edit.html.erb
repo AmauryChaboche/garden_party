@@ -16,7 +16,7 @@
         <%= f.input :description, default: @garden.description , label: 'description' %>
         <%= f.input :surface, label: 'surface' , default: @garden.surface %>
         <%= f.input :price, label: 'price' , default: @garden.price %>
-        <%= f.input :product, default: @garden.product ,  collection: ["tomates", "salades", "haricots", "choux", "radis", "courgettes"] %>
+        <%= f.input :product, default: @garden.product ,  collection: ["tomatoes", "salads", "carrots", "beans"] %>
         <%= f.input :photo , default: @garden.photo %>
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.button :submit %>

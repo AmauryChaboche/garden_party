@@ -1,7 +1,14 @@
 class GardensController < ApplicationController
   def index
-    if params[:product].present?
-      @gardens = policy_scope(Garden).where(product: params[:product])
+    if params[:product].present? && params[:city].present?
+      sql_query = "product ILIKE :product AND address ILIKE :city"
+      @gardens = policy_scope(Garden).where(sql_query, city: "%#{params[:city]}%", product: "%#{params[:product]}%")
+    elsif params[:product].present?
+      sql_query = "product ILIKE :product"
+      @gardens = policy_scope(Garden).where(sql_query, product: "%#{params[:product]}%")
+    elsif params[:city].present?
+      sql_query = "address ILIKE :city"
+      @gardens = policy_scope(Garden).where(sql_query, city: "%#{params[:city]}%")
     else
       @gardens = policy_scope(Garden).order(created_at: :desc)
     end
