@@ -1,6 +1,4 @@
 class BookingsController < ApplicationController
-
-
   def new
     @garden = Garden.find(params[:garden_id])
     @booking = Booking.new
@@ -35,7 +33,8 @@ class BookingsController < ApplicationController
       {
         lng: @booking.garden.longitude,
         lat: @booking.garden.latitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { garden: garden })
+        infoWindow: render_to_string(partial: "infowindow", locals: { garden: garden }),
+        image_url: helpers.asset_url('rog.png')
       }
     end
   end
