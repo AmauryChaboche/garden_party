@@ -1,5 +1,4 @@
 #map {
-  margin-top:10px;
   flex: 0 0 450px;
   height: 100vh;
   position: sticky !important; /* !important to override Gmaps inline CSS */
@@ -8,7 +7,8 @@
 
 
 .mapboxgl-popup {
-  max-width: 200px;
+  max-width: 100px;
+  max-height: 100px;
 }
 
 .mapboxgl-popup-content {
@@ -22,13 +22,13 @@
 }
 
 .special{
-  color:darkblue;
+  color:#484848;
 }
 
 
 
 .kiff img {
-  width:80px;
-  height:80px;
+  width:50px;
+  height:50px;
   }
 

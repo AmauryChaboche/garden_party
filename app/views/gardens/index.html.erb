@@ -12,41 +12,24 @@
   <div class="row">
     <div class="col-xs-7">
       <% @gardens.each do |garden| %>
-        <div class="col-xs-12 col-md-6 col-lg-4">
-
-          <% if garden.photo.present? %>
-
-            <div class="card card-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-             url('<%= cl_image_path garden.photo %>')" >
-            <div class="card-category">
-            </div>
-              <p> <%= link_to garden.title, garden_path(garden.id), class:"cokname" %> </p>
-            <div class="card-description">
-              <%= garden.description %>
-            </div>
-            <%= image_tag garden.user.photo , class:'card-user' %>
-
-            </div>
-
-          <% else %>
-
-            <div class="card card-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-             url('<%= image_path("toit.png")%>')">
-              <div class="card-category">
+        <div class="col-xs-12 col-md-6 col-lg-6">
+          <%= link_to garden_path(garden.id), :action => 'go' do %>
+            <div class="card-trip">
+              <div class="card-trip-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+               url('<%= cl_image_path garden.photo %>')" >
               </div>
-                <%= link_to garden.title, garden_path(garden.id), class:"cokname" %>
-              <div class="card-description">
+              <div class="card-trip-infos">
+                <div>
+                  <h2> <%= garden.title %></h2>
+                  <p> <%= garden.product %></p>
+                </div>
+                <h3 class="card-trip-pricing"><%= garden.price %>€/day </h3>
+                <%= image_tag garden.user.photo , class:'card-trip-user avatar-bordered' %>
               </div>
-              <%= image_tag garden.user.photo , class:'card-user' %>
             </div>
-
           <% end %>
         </div>
       <% end %>
-
-      <div class="col-xs-12 col-md-6 col-lg-4" id="special">
-        <%= link_to "Add a new one" , new_garden_path , class:"card card-index" , id:"lastcard"%>
-      </div>
     </div>
     <div class='col-xs-5'
       id="map"
@@ -58,6 +41,20 @@
     </div>
   </div>
 </div>
+
+
+<div class="card-trip">
+  <img src="IMAGE_URL_HERE">
+  <div class="card-trip-infos">
+    <div>
+      <h2>Title here</h2>
+      <p>Short description here!</p>
+    </div>
+    <h2 class="card-trip-pricing">£99.99</h2>
+    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
+  </div>
+</div>
+
 
 
 
