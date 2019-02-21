@@ -2,11 +2,10 @@
 <%= simple_form_for [garden, booking] do |f| %>
   <p>When do you want to rent this garden?</p>
 
-  <%= f.date_select :start_date, as: :date, id: 'booking-start-date' %>
-  <br>
-  <br>
+  <%= f.input :start_date, as: :string, required: false, id: 'booking-start-date', label: false, input_html: {class: "datepicker"} %>
+
   <p>Until what date?</p>
-  <%= f.date_select :end_date, as: :date, id: 'booking-end-date' %>
+  <%= f.input :end_date, as: :string, required: false, id: 'booking-end-date', label: false, input_html: {class: "datepicker"} %>
   <br>
   <span style='padding-top: 10px; font-weight: bold; font-size: 17Px;'>
     <span id="number-days"></span>
