@@ -5,6 +5,9 @@
    margin: 3px;
    justify-content: space-around;
    align-items: center;
+   margin-top:30px;
+   height: 55vh;
+
 }
 
 #booking_result {
@@ -12,6 +15,8 @@
   border-radius: 5px;
   background-color: #BABABA;
   padding: 3px;
+  height: 50vh;
+  text-align: center;
 }
 
 #booking_header {
@@ -19,6 +24,7 @@
   text-align: center;
   margin: 3px;
   padding: 3px;
+  font-weight: bold;
   //
 }
 
@@ -27,20 +33,46 @@
   background-color: #FEFEFE;
   margin: 3px;
   padding: 3px;
+
+}
+#booking_body h5 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+}
+#booking_body p {
+  font-size: 1em;
+  text-align: center;
+  font-weight: bold;
 }
 
 #booking_garden_image {
   background-size: cover;
   background-position: center;
+  border-radius: 5px;
   width: 30%;
   height: 50vh;
-  border: 3px solid lightgrey;
+  border: 7px solid #BABABA;
 }
-
 
 #booking_map {
+  border-radius: 5px;
   width: 30%;
-  border: 3px solid lightgrey;
-  // height: 200px;
+  height: 50vh;
+  border: 7px solid #BABABA;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: navy;
+  text-decoration: underline;
+}
+
+#booking_dates{
+  display:flex;
+
+
+}

@@ -7,14 +7,18 @@
 
       <div class="card" id="booking_result">
           <div class="card-header" id="booking_header">
-            <%= @booking.garden.user.email %>'s place!
+            <%= @booking.garden.user.first_name %>'s place!
           </div>
           <div class="card-body" id="booking_body">
             <h5 class="card-title"><%= @booking.garden.title %></h5>
-            <p class="card-text">From: <%= @booking.start_date %></p>
-            <p class="card-text">To: <%= @booking.end_date %></p>
-            <p class="card-text">at: <%= @booking.price %> €</p>
-            <p class="card-text">at: <%= @booking.garden.user.email %></p>
+            <p class="card-text"><%= @booking.garden.address %></p>
+            <div id="booking_dates">
+              <p class="card-text">From: <%= @booking.start_date %></p>
+              <p class="card-text">To: <%= @booking.end_date %></p>
+            </div>
+            <p class="card-text"><%= @booking.price %> €</p>
+            <a href="mailto:<%= @booking.garden.user.email %>?subject=Mail from GardenParty.com concern <%= @booking.garden.title %> booking&body=<%= "#{@booking.garden.title} , #{@booking.garden.address}, is booking from:  #{@booking.start_date} to: #{@booking.end_date}. You should receive #{@booking.price} € for this garden. Regards".html_safe %>">Email <%= @booking.garden.user.first_name %></a>
+
           </div>
       </div>
 
@@ -22,12 +26,11 @@
         <div
           id="map"
           style="width: 100%;
-          height: 50vh;"
+          height: 48vh;"
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="pk.eyJ1IjoiYW1hdXJ5Y2hhYm9jaGUiLCJhIjoiY2pydWdkdWM1MDRoeTQ0cDlpZmJibjI4YiJ9.r5kkC2C8yVGlRtA0GO4JBw" >
         </div>
       </div>
-
   </div>
 </div>
 
