@@ -33,10 +33,16 @@
 }
 
 .card-product .card-product-infos {
-  padding: 30px;
+  padding: 20px;
 }
 
 
 .card-product-infos {
   flex-grow: 1;
+  width: 250px;
+}
+
+.dates {
+  flex: 0 0 100px;
+  font-style: italic;
 }
