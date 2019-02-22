@@ -13,16 +13,19 @@
     <div class="info-container">
       <h2 style="margin-top: 0px"><%= @garden.title.capitalize %></h2>
       <p><%= @garden.description.capitalize %></p>
-      <div class="text">
-      <% if @garden.product.present? %>
-      <i class="fas fa-apple-alt"></i><p>Here you can grow <%= @garden.product %></p>
+      <div class="line-container">
+        <% if @garden.product.present? %>
+        <i class="fas fa-apple-alt"></i>
+        <p>Here you can grow <%= @garden.product %></p>
+        <% end %>
       </div>
-      <% end %>
-      <div class="text">
-      <i class="fas fa-dollar-sign"></i><p>Rent this garden for <%= @garden.price %>€ per day</p>
+      <div class="line-container">
+        <i class="fas fa-dollar-sign"></i>
+        <p>Rent this garden for <%= @garden.price %>€ per day</p>
       </div>
-       <div class="text">
-      <i class="fas fa-map-marker-alt"></i> <p><%= @garden.address %></p>
+     <div class="line-container">
+        <i class="fas fa-map-marker-alt"></i>
+        <p><%= @garden.address %></p>
       </div>
     </div>
 

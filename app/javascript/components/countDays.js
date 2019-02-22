@@ -5,6 +5,8 @@ const countDays = () => {
   const field = document.getElementById('number-days')
   const garden_price = document.getElementById('garden-price')
 
+  console.log('hello')
+
   if (start_date) {
     end_date.addEventListener('change', (event) => {
       const start = new Date(start_date.value);

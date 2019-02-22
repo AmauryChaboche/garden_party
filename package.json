@@ -8,6 +8,7 @@
     "flatpickr": "^4.5.2",
     "jquery": "^3.3.1",
     "mapbox-gl": "^0.53.0",
+    "places.js": "^1.15.5",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^8.2.1"
   },
