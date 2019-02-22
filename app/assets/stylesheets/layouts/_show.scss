@@ -57,6 +57,10 @@ h2 {
 .btn-black {
   background-color: black;
   color: white !important;
+  transition: font-size 0.6s ease;
+}
+.btn-black:hover {
+font-size: 3px;
 }
 
 .small_img {
