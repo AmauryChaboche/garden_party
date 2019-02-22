@@ -69,4 +69,3 @@ const toggleCardHighlighting = (event) => {
 }
 
 export { initMapbox };
-

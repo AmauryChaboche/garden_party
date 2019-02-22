@@ -32,6 +32,7 @@
 }
 
 .info-container {
+  min-width: 300px;
   p {
     font-weight: 700;
   }
@@ -61,3 +62,22 @@ h2 {
     font-weight: 300;
   }
 }
+
+.btn-green {
+  background-color: #228B22;
+  color: white !important;
+}
+
+.btn-black {
+  background-color: black;
+  color: white !important;
+  transition: font-size 0.6s ease;
+}
+.btn-black:hover {
+font-size: 3px;
+}
+
+.small_img {
+  width: 300px;
+}
+

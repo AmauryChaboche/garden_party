@@ -1,6 +1,7 @@
 
  <div class="banner index-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-           url('<%= image_path("gard.png")%>')" >
+           url('<%= image_path('gard.png')%>')" >
+
   <div class="container">
     <h1>  <strong> Find the perfect garden to grow your plants</strong></h1>
     <%= render 'findagarden' %>
@@ -19,7 +20,7 @@
               </div>
               <div class="card-trip-infos">
                 <div>
-                  <h2> <%= garden.title %></h2>
+                  <h2 class="card-trip-infos-title"> <%= garden.title %></h2>
                   <p> <%= garden.product %></p>
                 </div>
                 <h3 class="card-trip-pricing"><%= garden.price %>€/day </h3>

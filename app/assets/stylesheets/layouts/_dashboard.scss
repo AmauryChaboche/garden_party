@@ -6,12 +6,15 @@
   display: flex;
   align-items: center;
   margin-top: 15px;
-  padding-right: 10px;
+  padding-right: 22px;
+  width: 1000px;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
 .card-product img {
   height: 100%;
-  width: 120px;
+  width: 320px;
   object-fit: cover;
 }
 
@@ -30,10 +33,21 @@
 }
 
 .card-product .card-product-infos {
-  padding: 16px;
+  padding: 20px;
 }
 
+.card-product-infos > h5 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .card-product-infos {
   flex-grow: 1;
+  width: 250px;
+}
+
+.dates {
+  flex: 0 0 100px;
+  font-style: italic;
 }

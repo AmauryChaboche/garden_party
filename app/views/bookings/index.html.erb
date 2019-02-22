@@ -13,7 +13,7 @@
               <%= image_tag 'toit.png' %>
               <% end %>
               <div class="card-product-infos">
-                <%= booking.garden.title  %>
+                <h5><%= booking.garden.title  %></h5>
                 <p> <%= booking.garden.description %>
                 <% if booking.start_date.nil? || booking.end_date.nil? %>
                  <%= %>
@@ -22,8 +22,12 @@
                  <p> Total price : <strong> <%= total_days.to_i %> </strong>€</p>
                  <% end %>
               </div>
+              <div class="dates">
+               <p><%= booking.start_date %></p>
+               <p><%= booking.end_date %></p>
+              </div>
               <div class="boutons">
-               <%= link_to 'See my booking', booking_path(booking), class:'btn btn-primary' %>
+               <%= link_to 'See my booking', booking_path(booking), class:'btn btn-green' %>
               </div>
             </div>
           <% end %>

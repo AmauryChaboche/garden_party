@@ -1,3 +1,12 @@
+/* eslint no-console:0 */
+// This file is automatically compiled by Webpack, along with any other files
+// present in this directory. You're encouraged to place your actual application logic in
+// a relevant structure within app/javascript and only use these pack files to reference
+// that code so it'll be compiled.
+//
+// To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
+// layout file, like app/views/layouts/application.html.erb
+import places from 'places.js';
 import "bootstrap";
 
 import Swal from 'sweetalert2'
@@ -5,10 +14,12 @@ import Swal from 'sweetalert2'
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 import { initMapbox } from '../plugins/init_mapbox';
 import "../plugins/flatpickr"
+import "../plugins/init_autocomplete"
+import { countDays } from '../components/countDays'
+
+// initAutocomplete();
 
 initMapbox();
-
-import { countDays } from '../components/countDays'
 
 countDays();
 
@@ -24,32 +35,3 @@ if (button) {
     })
   })
 }
-
-
-
-//   swalWithBootstrapButtons.fire({
-//     title: 'Are you sure?',
-//     text: "You won't be able to revert this!",
-//     type: 'warning',
-//     showCancelButton: true,
-//     confirmButtonText: 'Yes, book it!',
-//     cancelButtonText: 'No, cancel!',
-//     reverseButtons: true
-//   }).then((result) => {
-//     if (result.value) {
-//       swalWithBootstrapButtons.fire(
-//         'Booked!',
-//         'Your garden is booked.',
-//         'success'
-//       )
-//     } else if (
-//       // Read more about handling dismissals
-//       result.dismiss === Swal.DismissReason.cancel
-//     ) {
-//       swalWithBootstrapButtons.fire(
-//         'Cancelled',
-//         'This garden wil not be yours :)',
-//         'Bye'
-//       )
-//     }
-//   })
