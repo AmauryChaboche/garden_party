@@ -7,7 +7,7 @@
 
       <div class="card" id="booking_result">
           <div class="panel-header" id="booking_header">
-            <p>Welcome in</p>
+            <p>Welcome to</p>
             <%= @booking.garden.user.first_name %>'s place!
           </div>
           <div class="panel-body" id="booking_body">
@@ -26,9 +26,9 @@
                <p> Total price : <strong> <%= total_days.to_i %> </strong>€</p>
                <% end %>
             </p>
-            <p>You can contact <%= @booking.garden.user.first_name %> to have more information ( gardeners near the garden, witch seeds to plant in what season; How to grow in silence...</p>
+            <p>You can contact <%= @booking.garden.user.first_name %> to have more informations ( gardeners near the garden, the kind of seeds you can plant and in what season; How to grow in silence...)</p>
             <br>
-            <a class="btn btn-outline-success" href="mailto:<%= @booking.garden.user.email %>?subject=GardenParty.com : <%= @booking.garden.title %> is booking&body=Dear <%= "#{@booking.garden.user.first_name}, your Garden - #{@booking.garden.title} - #{@booking.garden.address}, is booking from:  #{@booking.start_date} to: #{@booking.end_date}. You should receive #{total_days.to_i} € for this period. Regards - Garden Party, the easiest way to grow in silence.".html_safe %>"role="button">Email <%= @booking.garden.user.first_name %></a>
+            <a class="btn btn-green" href="mailto:<%= @booking.garden.user.email %>?subject=GardenParty.com : <%= @booking.garden.title %> is booking&body=Dear <%= "#{@booking.garden.user.first_name}, your Garden - #{@booking.garden.title} - #{@booking.garden.address}, is booking from:  #{@booking.start_date} to: #{@booking.end_date}. You should receive #{total_days.to_i} € for this period. Regards - Garden Party, the easiest way to grow in silence.".html_safe %>"role="button">Send email</a>
 
           </div>
       </div>

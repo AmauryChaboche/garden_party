@@ -36,6 +36,11 @@
   padding: 20px;
 }
 
+.card-product-infos > h5 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .card-product-infos {
   flex-grow: 1;
