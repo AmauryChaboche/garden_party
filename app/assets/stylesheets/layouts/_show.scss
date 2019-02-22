@@ -37,3 +37,14 @@ h2 {
   margin-top: 20px;
 }
 
+.info-container {
+  min-width: 300px;
+}
+.text {
+  display: flex;
+  justify-content: space-between;
+  p {
+    display: flex;
+    justify-content: left;
+  }
+}
