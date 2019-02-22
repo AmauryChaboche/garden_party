@@ -19,7 +19,8 @@ class GardensController < ApplicationController
         lng: garden.longitude,
         lat: garden.latitude,
         infoWindow: render_to_string(partial: "infowindow", locals: { garden: garden }),
-        image_url: helpers.asset_url('rog.png')
+        image_url: helpers.asset_url('rog.png'),
+        id: garden.id,
       }
     end
   end
