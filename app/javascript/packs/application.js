@@ -6,7 +6,7 @@
 //
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
-
+import places from 'places.js';
 import "bootstrap";
 
 import Swal from 'sweetalert2'
@@ -14,10 +14,12 @@ import Swal from 'sweetalert2'
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 import { initMapbox } from '../plugins/init_mapbox';
 import "../plugins/flatpickr"
+import "../plugins/init_autocomplete"
+import { countDays } from '../components/countDays'
+
+// initAutocomplete();
 
 initMapbox();
-
-import { countDays } from '../components/countDays'
 
 countDays();
 
