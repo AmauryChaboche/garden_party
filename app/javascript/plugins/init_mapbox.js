@@ -18,6 +18,7 @@ import mapboxgl from 'mapbox-gl';
     });
     const markers = JSON.parse(mapElement.dataset.markers);
     fitMapToMarkers(map, markers);
+    const mapMarkers = []
     markers.forEach((marker) => {
       const element = document.createElement('div');
       element.className = 'marker';
@@ -31,6 +32,7 @@ import mapboxgl from 'mapbox-gl';
         .setPopup(new mapboxgl.Popup({ offset: 25 })
         .setHTML(marker.infoWindow))
         .addTo(map);
+         mapMarker.push(newMarker)
       });
   }
 };
