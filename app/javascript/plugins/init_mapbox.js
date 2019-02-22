@@ -35,15 +35,15 @@ import mapboxgl from 'mapbox-gl';
         .setPopup(new mapboxgl.Popup({ offset: 25 })
         .setHTML(marker.infoWindow))
         .addTo(map);
-<<<<<<< HEAD
-         mapMarker.push(newMarker)
-=======
+
+
+
         mapMarker.push(newMarker)
         newMarker.getElement().dataset.markerId = marker.id;
         newMarker.getElement().addEventListener('mouseenter', (e) => toggleCardHighlighting(e) );
         // We put a microphone on listening for a mouseleave event
         newMarker.getElement().addEventListener('mouseleave', (e) => toggleCardHighlighting(e) );
->>>>>>> ef360893f7444929234e6a60a9cf67bb90a33ee3
+
       });
    fitMapToMarkers(map, markers);
    openInfoWindow(mapMarker);
