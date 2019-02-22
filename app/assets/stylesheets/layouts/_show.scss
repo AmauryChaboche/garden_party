@@ -17,23 +17,47 @@
 }
 
 .booking-container {
-  border: solid 1px lightgrey;
-  padding: 15px;
+  padding: 45px;
+  border-radius: 10px;
   position: sticky;
+  background-color: white;
+  box-shadow: 0 10px 30px 0px rgba(0, 0, 0, 0.1);
   h2 {
   text-align: center;
-}
-p {
-font-size: 15px;
-}
+  }
+  p {
+  font-weight: 300;
+  color: #808080;
+  }
 }
 
+.info-container {
+  p {
+    font-weight: 700;
+  }
+}
 
 h2 {
   font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #3CB371;
 }
 
 .book-button {
   margin-top: 20px;
 }
 
+.line-container {
+  display: flex;
+  i {
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+    color: #808080;
+  }
+  p {
+    color: #808080;
+    font-weight: 300;
+  }
+}
