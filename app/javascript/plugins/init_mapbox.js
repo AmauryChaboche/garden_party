@@ -21,7 +21,6 @@ import mapboxgl from 'mapbox-gl';
     const markers = JSON.parse(mapElement.dataset.markers);
     const mapMarker = []
     fitMapToMarkers(map, markers);
-    const mapMarkers = []
     markers.forEach((marker) => {
       const element = document.createElement('div');
       element.className = 'marker';
@@ -35,15 +34,11 @@ import mapboxgl from 'mapbox-gl';
         .setPopup(new mapboxgl.Popup({ offset: 25 })
         .setHTML(marker.infoWindow))
         .addTo(map);
-
-
-
         mapMarker.push(newMarker)
         newMarker.getElement().dataset.markerId = marker.id;
         newMarker.getElement().addEventListener('mouseenter', (e) => toggleCardHighlighting(e) );
         // We put a microphone on listening for a mouseleave event
         newMarker.getElement().addEventListener('mouseleave', (e) => toggleCardHighlighting(e) );
-
       });
    fitMapToMarkers(map, markers);
    openInfoWindow(mapMarker);
@@ -74,4 +69,3 @@ const toggleCardHighlighting = (event) => {
 }
 
 export { initMapbox };
-
