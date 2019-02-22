@@ -16,7 +16,7 @@
           <%= link_to garden_path(garden.id), :action => 'go' do %>
             <div class="card-trip">
               <div class="card-trip-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-               url('<%= cl_image_path garden.photo %>')" >
+               url('<%= cl_image_path garden.photo %>')" data-garden-id="<%= garden.id %>" >
               </div>
               <div class="card-trip-infos">
                 <div>
@@ -34,7 +34,7 @@
     <div class='col-xs-5'
       id="map"
       style="width: 40%;
-      height: 600px;"
+      height: 100vh;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="pk.eyJ1IjoiYW1hdXJ5Y2hhYm9jaGUiLCJhIjoiY2pydWdkdWM1MDRoeTQ0cDlpZmJibjI4YiJ9.r5kkC2C8yVGlRtA0GO4JBw"
     >
